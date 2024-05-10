@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Hello World!</title>
-    </head>
-    <body>
-        <h1>Hello, World!</h1>
-    </body>
+<head>
+  <title>Counter</title>
+</head>
+<body>
+  <h1 id="counter-display">(..)</h1>
+  <script>
+    let count = 0;
+    let counterDisplayElem = document.getElementById('counter-display');
+
+    function updateDisplay() {
+      counterDisplayElem.innerText = count;
+    }
+
+    function countUp() {
+      count++;
+      updateDisplay();
+    }
+
+    function countDown() {
+      count--;
+      updateDisplay();
+    }
+
+    // Call updateDisplay initially to show the initial count
+    updateDisplay();
+
+    // Use setInterval to increment the count every second
+    setInterval(countUp, 1000);
+  </script>
+</body>
 </html>
